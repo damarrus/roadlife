@@ -1,0 +1,60 @@
+
+#General
+general.ok=Ok
+general.yes=Yes
+general.no=No
+general.cancel=Cancel
+general.message=Message
+general.back=Back
+general.delete=Delete
+general.warning=Warning
+general.continue=Continue
+general.next=Next
+general.pause=Pause
+general.restart=Restart
+general.play=Play
+general.loading-dots=Loading...
+
+#Ошибки
+errors.connection-fail=Can't connect to server
+
+#First tutorial
+tutorial.first.boss-name=Orc Warrior
+tutorial.first.player-hello=Hello there
+tutorial.first.boss-hello=Little healer... prepare to die
+tutorial.first.new-ally-boss-reaction=He can't save you!
+tutorial.first.mass-ally-boss-reaction=More reinforcement?\nGood... I'll burn them all!
+tutorial.first.use-heal=Swipe up quickly to use simple heal
+tutorial.first.cast-hint=Yellow circle is a skill cast progress
+tutorial.first.unit-hex-hint=Hex shows unit <color=#00A619>health</color> and his state
+tutorial.first.heal-to-full=Swipe up one more time to restore\nmissing <color=#00A619>health</color>
+tutorial.first.first-ally=Reinforcement arrived!
+tutorial.first.ally-damage-hint=<color=#00A619>Living</color> allies damage boss health
+tutorial.first.new-hot=Time to use new skill - <color=#0018C8>rejuvenation</color>
+tutorial.first.new-aoe=Save raid with a new skill - <color=#0018C8>mass heal</color>
+tutorial.first.use-hot=Swipe to according direction\nto use needed skill
+tutorial.first.use-aoe=Swipe down on any unit to use <color=#0018C8>mass heal</color>
+tutorial.first.hot-explanation=<color=#0018C8>Rejuvenation</color> restores <color=#00A619>health</color> by time\nyellow bar on according\nborder is a remaining duration
+tutorial.first.boss-queue-hint=This progress shows boss special skills
+tutorial.first.boss-stage-hint=The <color=#fc1717>red text</color> means\nboss changed his behaviour\nI need to be carefully
+tutorial.first.prepare-battle=Win the battle using all you learned
+tutorial.first.boss-first-hit=I'll end it with just one hit!
+tutorial.first.boss-change-stage=<color=#fc1717>YOU ARE NOT PREPARED</color>
+format.level={0} lv.
+format.count=x{0}
+tutorial.tap-hint=Tap to continue
+tutorial.tutorial=Tutorial
+description.items.gold=Toss a coin to your witcher!
+description.items.helmet_1=Better than nothing
+description.items.helmet_2=It's something
+names.items.gold=Gold
+names.items.helmet_1=Ragged cap
+names.items.helmet_2=Cap
+shop.shop=Shop
+tooltip.not-realized=This feature will be soon!
+equipment.change=Change&Equip
+equipment.incrustation=Gems
+equipment.upgrade-format=Upgrade <sprite index=0>{0}
+equipment.upgrade-no-gold=Upgrade <sprite index=0><color=#fc1717>{0}</color>
+equipment.upgrade-no-exp=Not enough exp
+equipment.upgrade=Upgrade

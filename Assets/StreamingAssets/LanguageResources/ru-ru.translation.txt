@@ -1,0 +1,60 @@
+
+#Общее
+general.ok=Ок
+general.yes=Да
+general.no=Нет
+general.cancel=Отмена
+general.message=Сообщение
+general.back=Назад
+general.delete=Удалить
+general.warning=Внимание
+general.continue=Продолжить
+general.next=Далее
+general.pause=Пауза
+general.restart=Заново
+general.play=Играть
+general.loading-dots=Загрузка...
+
+#Ошибки
+errors.connection-fail=Не удалось подключиться к серверу
+
+#Первый тутор
+tutorial.first.boss-name=Орк Воин
+tutorial.first.player-hello=Привет
+tutorial.first.boss-hello=Маленький целитель...\nприготовься умереть
+tutorial.first.new-ally-boss-reaction=Он тебя не спасет!
+tutorial.first.mass-ally-boss-reaction=Еще подкрепление?\nХорошо... Сожгу вас всех!
+tutorial.first.use-heal=Быстрый свайп вверх чтобы исцелить
+tutorial.first.cast-hint=Желтое кольцо - процесс\nподготовки заклинания
+tutorial.first.unit-hex-hint=Гекс показывает <color=#00A619>здоровье</color> юнита\nи его состояние
+tutorial.first.heal-to-full=Свайп вверх еще раз,\nчтобы восстановить остальное <color=#00A619>здоровье</color>
+tutorial.first.first-ally=Прибыло подкрепление!
+tutorial.first.ally-damage-hint=<color=#00A619>Живые</color> союзники наносят боссу урон
+tutorial.first.new-hot=Используй новое заклинание - <color=#0018C8>омоложение</color>
+tutorial.first.new-aoe=Спаси союзников новым заклинанием -\n<color=#0018C8>массовое лечение</color>
+tutorial.first.use-hot=Свайпни в соответсвующую сторону,\nчтобы использовать\nнужное заклинание
+tutorial.first.use-aoe=Свайп вниз на любом юните,\nчтобы использовать <color=#0018C8>массовое лечение</color>
+tutorial.first.hot-explanation=<color=#0018C8>Омоложение</color> лечит <color=#00A619>здоровье</color> постепенно,\nжелтая шкала на соответствующей стороне -\nоставшаяся длительность
+tutorial.first.boss-queue-hint=Эта шкала показывает заклинания босса
+tutorial.first.boss-stage-hint=<color=#fc1717>Красный текст</color> сообщает,\nчто босс изменил свое поведение\nнужно соблюдать осторожность
+tutorial.first.prepare-battle=Одержи победу используя все\nчему научился
+tutorial.first.boss-first-hit=Я покончу с тобой одним ударом!
+tutorial.first.boss-change-stage=<color=#fc1717>ВЫ НЕ ГОТОВЫ</color>
+format.level={0} ур.
+format.count=x{0}
+tutorial.tap-hint=Тап для продолжения
+tutorial.tutorial=Обучение
+description.items.gold=Ведьмаку заплатите чеканной монетой!
+description.items.helmet_1=Лучше чем ничего
+description.items.helmet_2=Хоть что-то
+names.items.gold=Золото
+names.items.helmet_1=Рваный капюшон
+names.items.helmet_2=Капюшон
+shop.shop=Магазин
+tooltip.not-realized=Еще в разработке!
+equipment.change=Сменить&Надеть
+equipment.incrustation=Самоцветы
+equipment.upgrade-format=Улучшить <sprite index=0>{0}
+equipment.upgrade-no-gold=Улучшить <sprite index=0><color=#fc1717>{0}</color>
+equipment.upgrade-no-exp=Недостаточно опыта
+equipment.upgrade=Улучшение
