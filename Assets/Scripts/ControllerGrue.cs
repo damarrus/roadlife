@@ -6,8 +6,9 @@ public class ControllerGrue : MonoBehaviour
 {
     private  SelectorsController controllerSelectedItem;
     public Slider slider;
-    private bool canMouseRight;
+    private bool canMouseRight, canDoNext;
     private bool canMouseLeft = true;
+
     
     public void Start()
     {
@@ -15,30 +16,46 @@ public class ControllerGrue : MonoBehaviour
     }
     public void Update()
     {
-        var itemId = controllerSelectedItem.ActiveToolsContainer.GetKey(controllerSelectedItem.ActiveToolsContainer.LastSelectedItem);
-        if(itemId == "Grue")
+        if (controllerSelectedItem.ActiveToolsContainer.LastSelectedItem != null)
         {
-            if (canMouseLeft == true)
+            var itemId = controllerSelectedItem.ActiveToolsContainer.GetKey(controllerSelectedItem.ActiveToolsContainer.LastSelectedItem);
+            if (itemId == "glue")
             {
-                if (Input.GetMouseButtonDown(0))
-                {
-                    slider.value += 1;
-                    canMouseLeft = false;
-                    canMouseRight = true;
-                }
-            }
-            else if (canMouseRight == true)
-            {
-                if (Input.GetMouseButtonDown(1))
-                {
-                    slider.value += 1f;
-                    canMouseRight = false;
-                    canMouseLeft = true;
-                }
-            }
-            slider.value -= 0.5f;
-        }
 
-       
+                if (!canDoNext)
+                {
+
+                    if (canMouseLeft == true)
+                    {
+                        if (Input.GetMouseButtonDown(0))
+                        {
+                            slider.value += 1;
+                            canMouseLeft = false;
+                            canMouseRight = true;
+                        }
+                    }
+                    else if (canMouseRight == true)
+                    {
+                        if (Input.GetMouseButtonDown(1))
+                        {
+                            slider.value += 1f;
+                            canMouseRight = false;
+                            canMouseLeft = true;
+                        }
+                    }
+                    if (slider.value == slider.maxValue)
+                    {
+                        canDoNext = true;
+                    }
+                    if (!canDoNext) slider.value -= 0.09f;
+
+                }
+            }
+            if (canDoNext)
+            {
+                slider.value -= 0.02f;
+            }
+
+        }
     }
 }
