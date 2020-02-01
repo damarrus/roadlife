@@ -10,7 +10,7 @@ public class ControllerGrue : MonoBehaviour
     public Slider slider;
     private bool canMouseRight, canDoNext;
     private bool canMouseLeft = true;
-    public event Action<Vector2> OnGlueUsed;
+    public event Action<Vector2> OnGlueUsed = delegate { };
 
     public void Start()
     {
@@ -44,7 +44,6 @@ public class ControllerGrue : MonoBehaviour
                     }
                     if (slider.value == slider.maxValue)
                     {
-                        
                         slider.gameObject.SetActive(false);
                         controllerSelectedItem.ActiveToolsContainer.FullDeselect();
                         OnGlueUsed.Invoke(Input.mousePosition);
