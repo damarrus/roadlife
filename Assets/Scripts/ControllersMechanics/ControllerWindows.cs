@@ -14,6 +14,7 @@ public class ControllerWindows : MonoBehaviour
     [SerializeField] private Sprite[] secrets;
     public void BeginCharacter(int numberCharacter)
     {
+       
         buttonGoAhead.SetActive(true);
         buttonContinue.SetActive(false);
         WindowCharacter.transform.GetChild(0).gameObject.GetComponent<Image>().sprite = characters[numberCharacter];
@@ -22,6 +23,7 @@ public class ControllerWindows : MonoBehaviour
     }
     public void ItemReady(int numberCharacter)
     {
+        
         buttonGoAhead.SetActive(false);
         buttonContinue.SetActive(true);
         WindowCharacter.transform.GetChild(0).GetComponent<Image>().sprite = endCharacters[numberCharacter];
@@ -31,6 +33,12 @@ public class ControllerWindows : MonoBehaviour
    
     public void BeginRepairItem()
     {
+        
         WindowCharacter.SetActive(false);
     }
+    private void WindowClose()
+    {
+     
+    }
+
 }
