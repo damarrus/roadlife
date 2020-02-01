@@ -81,6 +81,7 @@
     <Compile Include="Assets\Scripts\ControllersMechanics\ControllerLever.cs" />
     <Compile Include="Assets\Scripts\ControllersMechanics\ControllerShower.cs" />
     <Compile Include="Assets\Scripts\EcsInitializer.cs" />
+    <Compile Include="Assets\Scripts\GlueUIController.cs" />
     <Compile Include="Assets\Scripts\MadaoEcs\Components\EntityStubComponent.cs" />
     <Compile Include="Assets\Scripts\MadaoEcs\Components\IComponent.cs" />
     <Compile Include="Assets\Scripts\MadaoEcs\Config\AutoTemplatesData.cs" />
