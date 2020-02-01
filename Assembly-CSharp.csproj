@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\Bureau\LevelStarter.cs" />
     <Compile Include="Assets\Scripts\Bureau\MouseItemUI.cs" />
     <Compile Include="Assets\Scripts\Bureau\SelectorsController.cs" />
+    <Compile Include="Assets\Scripts\Bureau\TableItemUI.cs" />
     <Compile Include="Assets\Scripts\Container\AbstractContainer.cs" />
     <Compile Include="Assets\Scripts\Container\AbstractSingleTargetSelector.cs" />
     <Compile Include="Assets\Scripts\Container\ISelectableItem.cs" />

@@ -63,8 +63,11 @@ namespace DeRibura
             {
                 OnSelect(item);
             }
-            LastSelectedItem = item;
-            LastSelectedItem.SetSelection(true);
+            if (!IsDeselectable || !isSelectSame)
+            {
+                LastSelectedItem = item;
+                LastSelectedItem.SetSelection(true);
+            }
         }
 
         protected override void RegisterItem(K key, T item)
@@ -95,7 +98,7 @@ namespace DeRibura
 
         void OnValidate()
         {
-            if (!(prefab is ISelectableItem<T>))
+            if (prefab != null && !(prefab is ISelectableItem<T>))
             {
                 Debug.LogError("Prefab must implement 'ISelectableItem' interface");
                 prefab = null;
