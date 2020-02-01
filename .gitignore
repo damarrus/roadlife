@@ -53,3 +53,5 @@ Assets/HeavyAssets/Assetbundles/
 Assets/HeavyAssets/Assetbundles.meta
 iOSBuild/
 builds/
+Library/shadercompiler-UnityShaderCompiler.exe0.log
+obj/Debug/Assembly-CSharp-Editor.csprojAssemblyReference.cache

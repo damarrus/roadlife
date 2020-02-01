@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 public class LevelStarter : MonoBehaviour
 {
+    public PendantItemController pendantItemController;
     public SelectorsController selectorsController;
     public GameObject firstLevelItems;
     public ItemContainer firstLevelSelectorItemSelector;
