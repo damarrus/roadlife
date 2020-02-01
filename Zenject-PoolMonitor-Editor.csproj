@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{73CB07C0-C39D-3AA5-1B53-7201A524C656}</ProjectGuid>
+    <ProjectGuid>{DA44ADC4-4521-A443-750C-E1FBB474FFE2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Zenject-PoolMonitor-Editor</AssemblyName>
@@ -68,19 +68,19 @@
     <Compile Include="Assets\Plugins\Zenject\OptionalExtras\MemoryPoolMonitor\Editor\DebugWindow\MpmWindow.cs" />
     <Compile Include="Assets\Plugins\Zenject\OptionalExtras\MemoryPoolMonitor\Editor\MpmSettingsInstaller.cs" />
     <Reference Include="UnityEditor.UI">
-      <HintPath>C:/UnityProjects/HakatonTest/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>C:/UnityProjects/RoadLife/roadlife/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Tilemap.Editor">
-      <HintPath>C:/UnityProjects/HakatonTest/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
+      <HintPath>C:/UnityProjects/RoadLife/roadlife/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>C:/UnityProjects/HakatonTest/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>C:/UnityProjects/RoadLife/roadlife/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.TestRunner">
-      <HintPath>C:/UnityProjects/HakatonTest/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
+      <HintPath>C:/UnityProjects/RoadLife/roadlife/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.TestRunner">
-      <HintPath>C:/UnityProjects/HakatonTest/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
+      <HintPath>C:/UnityProjects/RoadLife/roadlife/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -272,31 +272,31 @@
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/16.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
     <Reference Include="DotNetZip">
-      <HintPath>C:/UnityProjects/HakatonTest/Assets/NuGet/Editor/DotNetZip.dll</HintPath>
+      <HintPath>C:/UnityProjects/RoadLife/roadlife/Assets/NuGet/Editor/DotNetZip.dll</HintPath>
     </Reference>
     <Reference Include="NugetForUnity">
-      <HintPath>C:/UnityProjects/HakatonTest/Assets/NuGet/Editor/NugetForUnity.dll</HintPath>
+      <HintPath>C:/UnityProjects/RoadLife/roadlife/Assets/NuGet/Editor/NugetForUnity.dll</HintPath>
     </Reference>
     <Reference Include="FastMember">
-      <HintPath>C:/UnityProjects/HakatonTest/Assets/Plugins/FastMember.dll</HintPath>
+      <HintPath>C:/UnityProjects/RoadLife/roadlife/Assets/Plugins/FastMember.dll</HintPath>
     </Reference>
     <Reference Include="Zenject.ReflectionBaking.Mono.Cecil">
-      <HintPath>C:/UnityProjects/HakatonTest/Assets/Plugins/Zenject/OptionalExtras/ReflectionBaking/Lib/Zenject.ReflectionBaking.Mono.Cecil.dll</HintPath>
+      <HintPath>C:/UnityProjects/RoadLife/roadlife/Assets/Plugins/Zenject/OptionalExtras/ReflectionBaking/Lib/Zenject.ReflectionBaking.Mono.Cecil.dll</HintPath>
     </Reference>
     <Reference Include="Zenject.ReflectionBaking.Mono.Cecil.Mdb">
-      <HintPath>C:/UnityProjects/HakatonTest/Assets/Plugins/Zenject/OptionalExtras/ReflectionBaking/Lib/Zenject.ReflectionBaking.Mono.Cecil.Mdb.dll</HintPath>
+      <HintPath>C:/UnityProjects/RoadLife/roadlife/Assets/Plugins/Zenject/OptionalExtras/ReflectionBaking/Lib/Zenject.ReflectionBaking.Mono.Cecil.Mdb.dll</HintPath>
     </Reference>
     <Reference Include="Zenject.ReflectionBaking.Mono.Cecil.Pdb">
-      <HintPath>C:/UnityProjects/HakatonTest/Assets/Plugins/Zenject/OptionalExtras/ReflectionBaking/Lib/Zenject.ReflectionBaking.Mono.Cecil.Pdb.dll</HintPath>
+      <HintPath>C:/UnityProjects/RoadLife/roadlife/Assets/Plugins/Zenject/OptionalExtras/ReflectionBaking/Lib/Zenject.ReflectionBaking.Mono.Cecil.Pdb.dll</HintPath>
     </Reference>
     <Reference Include="Zenject.ReflectionBaking.Mono.Cecil.Rocks">
-      <HintPath>C:/UnityProjects/HakatonTest/Assets/Plugins/Zenject/OptionalExtras/ReflectionBaking/Lib/Zenject.ReflectionBaking.Mono.Cecil.Rocks.dll</HintPath>
+      <HintPath>C:/UnityProjects/RoadLife/roadlife/Assets/Plugins/Zenject/OptionalExtras/ReflectionBaking/Lib/Zenject.ReflectionBaking.Mono.Cecil.Rocks.dll</HintPath>
     </Reference>
     <Reference Include="Zenject-usage">
-      <HintPath>C:/UnityProjects/HakatonTest/Assets/Plugins/Zenject/Source/Usage/Zenject-usage.dll</HintPath>
+      <HintPath>C:/UnityProjects/RoadLife/roadlife/Assets/Plugins/Zenject/Source/Usage/Zenject-usage.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
-      <HintPath>C:/UnityProjects/HakatonTest/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
+      <HintPath>C:/UnityProjects/RoadLife/roadlife/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.5f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
@@ -655,11 +655,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Zenject.csproj">
-      <Project>{DA7B0119-4468-D52B-6390-049BDD41E811}</Project>
+      <Project>{18E70739-0CBA-F463-9265-15BE99038AF4}</Project>
       <Name>Zenject</Name>
     </ProjectReference>
     <ProjectReference Include="Zenject-Editor.csproj">
-      <Project>{A01977DA-A82A-299A-A262-FFD280E4C5D2}</Project>
+      <Project>{D0268602-A911-4E01-5DB6-96462319E5A8}</Project>
       <Name>Zenject-Editor</Name>
     </ProjectReference>
   </ItemGroup>
