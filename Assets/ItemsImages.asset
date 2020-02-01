@@ -15,13 +15,13 @@ MonoBehaviour:
   fallback: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   collection:
   - Key: pendant-left
-    Value: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+    Value: {fileID: 21300000, guid: c713dde620237314f801492966092f08, type: 3}
   - Key: pendant-right
-    Value: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+    Value: {fileID: 21300000, guid: 1f1a80e90fe1c2b4891f2bbadc1f9d92, type: 3}
   - Key: pendant-gem
-    Value: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
+    Value: {fileID: 21300000, guid: ebe0c9f0aaca9dd4a879704c67590cc9, type: 3}
   - Key: pendant-lock
-    Value: {fileID: 21300000, guid: eec19781926cd2248b7c9abfde8db555, type: 3}
+    Value: {fileID: 21300000, guid: 7851aad105fe45b42984cf05d46dbfc3, type: 3}
   - Key: hammer
     Value: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   - Key: glue
