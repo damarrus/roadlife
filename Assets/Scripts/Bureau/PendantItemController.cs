@@ -96,7 +96,13 @@ public class PendantItemController : MonoBehaviour
     {
         timerSlider.gameObject.SetActive(false);
         LeftAndRightPartsTimer.IsTimerActive = false;
-        windowsController.BeginCharacter(0);
+        StartCoroutine(ShowSuccessDialog());
+    }
+
+    private IEnumerator ShowSuccessDialog()
+    {
+        yield return new WaitForSeconds(1);
+        windowsController.ItemReady(0);
     }
 
     private bool IsItemCompleted()

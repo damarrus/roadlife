@@ -12,6 +12,9 @@ public class LevelStarter : MonoBehaviour
     public GameObject secondLevelItems;
     public ItemContainer secondLevelSelectorItemSelector;
     public ItemContainer secondLevelToolSelector;
+    public GameObject thirdLevelItems;
+    public ItemContainer thirdLevelSelectorItemSelector;
+    public ItemContainer thirdLevelToolSelector;
 
     private void Start()
     {
@@ -28,5 +31,11 @@ public class LevelStarter : MonoBehaviour
     {
         secondLevelItems.SetActive(true);
         selectorsController.SetSelectors(secondLevelSelectorItemSelector, secondLevelToolSelector);
+    }
+
+    public void StartThirdLevel()
+    {
+        thirdLevelItems.SetActive(true);
+        selectorsController.SetSelectors(thirdLevelSelectorItemSelector, thirdLevelToolSelector);
     }
 }
