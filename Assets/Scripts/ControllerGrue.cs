@@ -16,7 +16,7 @@ public class ControllerGrue : MonoBehaviour
     public void Update()
     {
         var itemId = controllerSelectedItem.ActiveToolsContainer.GetKey(controllerSelectedItem.ActiveToolsContainer.LastSelectedItem);
-       // if(itemId == "Grue")
+        if(itemId == "Grue")
         {
             if (canMouseLeft == true)
             {
