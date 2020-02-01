@@ -72,6 +72,7 @@
     <Compile Include="Assets\Scripts\Container\ISelectableItem.cs" />
     <Compile Include="Assets\Scripts\Container\ItemContainer.cs" />
     <Compile Include="Assets\Scripts\Container\ItemUiData.cs" />
+    <Compile Include="Assets\Scripts\Container\TableClicker.cs" />
     <Compile Include="Assets\Scripts\EcsInitializer.cs" />
     <Compile Include="Assets\Scripts\MadaoEcs\Components\EntityStubComponent.cs" />
     <Compile Include="Assets\Scripts\MadaoEcs\Components\IComponent.cs" />
