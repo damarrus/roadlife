@@ -6,14 +6,13 @@ using UnityEngine.UI;
 
 public class BoxItemController : MonoBehaviour
 {
-    public ControllerGrue glueController;
+    public ControllerHammer hammerController;
     public SelectorsController selectors;
     public TableItemUI bottomBox;
     public TableItemUI cardKeyBox;
     public TableItemUI cardEnergyBox;
     public TableItemUI cardDarknessBox;
     public TableItemUI cardOldmanBox;
-    public TableItemUI boltBox;
     public TableItemUI wallFrontBox;
     public TableItemUI wallBackBox;
     public TableItemUI wallLeftBox;
@@ -22,11 +21,20 @@ public class BoxItemController : MonoBehaviour
     public TableItemUI lockBox;
 
     public TableClicker tableClicker;
-    public ColliderThing gemGlue;
+    public ColliderThing wallFrontRightHammer;
+    public ColliderThing wallFrontLeftHammer;
+    public ColliderThing wallBackLeftHammer;
+    public ColliderThing wallBackRightHammer;
     public Slider timerSlider;
     
 
-    public BoxCollider2D gemArea;
+    public BoxCollider2D wallFrontRightArea;
+    public BoxCollider2D wallFrontLeftArea;
+    public BoxCollider2D wallBackLeftArea;
+    public BoxCollider2D wallBackRightArea;
+    public BoxCollider2D cardArea;
+    public BoxCollider2D wallArea;
+    public BoxCollider2D coverArea;
     public BoxCollider2D lockArea;
 
     public Timer BoxTimer;
@@ -42,30 +50,56 @@ public class BoxItemController : MonoBehaviour
             { "box-card-energy", AddCardEnergyBox },
             { "box-card-darkness", AddCardDarknessBox },
             { "box-card-oldman", AddCardOldmanBox },
-            { "box-bolt", AddBoltBox },
             { "box-wall-front", AddWallFrontBox },
             { "box-wall-back", AddWallBackBox },
             { "box-wall-left", AddWallLeftBox },
             { "box-wall-right", AddWallRightBox },
             { "box-cover", AddCoverBox },
-            { "box-lock", AddLockBox },
-            { "box-key", AddKeyBox },
-            { "box-key", AddBox }
+            { "box-lock", AddLockBox }
+            // { "box-key", AddKeyBox }
         };
 
         tableClicker.OnTableClick += pos => CheckTableClick(pos);
         BoxTimer.OnEnd += () =>
         {
+            if (wallFrontBox.gameObject.activeSelf){wallFrontBox.Break();}
+            if (wallBackBox.gameObject.activeSelf){wallBackBox.Break();}
+            if (wallLeftBox.gameObject.activeSelf){wallLeftBox.Break();}
+            if (wallRightBox.gameObject.activeSelf){wallRightBox.Break();}
+            if (coverBox.gameObject.activeSelf){coverBox.Break();}
+            if (lockBox.gameObject.activeSelf){lockBox.Break();}
+
             wallFrontBox.Break();
             wallBackBox.Break();
             wallLeftBox.Break();
             wallRightBox.Break();
-            gemGlue.gameObject.SetActive(false);
+            coverBox.Break();
+            lockBox.Break();
+
+            wallFrontRightHammer.gameObject.SetActive(false);
+            wallFrontLeftHammer.gameObject.SetActive(false);
+            wallBackLeftHammer.gameObject.SetActive(false);
+            wallBackRightHammer.gameObject.SetActive(false);
+
             timerSlider.gameObject.SetActive(false);
         };
-        glueController.OnGlueUsed += pos => UseGemGlueIfPossible(pos);
-        rightPendant.OnBreakEnd += () => rightPendant.gameObject.SetActive(false);
-        pendantGem.OnBreakEnd += () => pendantGem.gameObject.SetActive(false);
+
+        hammerController.OnHammerUsed += pos => {
+            
+            // TODO проверка
+
+            UseWallFrontRightHammerIfPossible(pos);
+            UseWallFrontLeftHammerIfPossible(pos);
+            UseWallBackLeftHammerIfPossible(pos);
+            UseWallBackRightHammerIfPossible(pos);
+        }
+        
+        wallFrontBox.OnBreakEnd += () => wallFrontBox.gameObject.SetActive(false);
+        wallBackBox.OnBreakEnd += () => wallBackBox.gameObject.SetActive(false);
+        wallLeftBox.OnBreakEnd += () => wallLeftBox.gameObject.SetActive(false);
+        wallRightBox.OnBreakEnd += () => wallRightBox.gameObject.SetActive(false);
+        coverBox.OnBreakEnd += () => coverBox.gameObject.SetActive(false);
+        lockBox.OnBreakEnd += () => lockBox.gameObject.SetActive(false);
     }
 
     private void Update()
@@ -76,11 +110,41 @@ public class BoxItemController : MonoBehaviour
         }
     }
 
-    private void UseGemGlueIfPossible(Vector2 pos)
+    private void UseWallFrontRightHammerIfPossible(Vector2 pos)
     {
-        if (gemArea.OverlapPoint(pos))
+        if (wallFrontRightArea.OverlapPoint(pos) && !wallFrontRightHammer.gameObject.activeSelf) 
         {
-            gemGlue.gameObject.SetActive(true);
+            wallFrontRightHammer.gameObject.SetActive(true);
+            BoxTimer.Dur += 5;
+            BoxTimer.MaxDur = Mathf.Max(BoxTimer.MaxDur, BoxTimer.Dur);
+        }
+    }
+
+    private void UseWallFrontLeftHammerIfPossible(Vector2 pos)
+    {
+        if (wallFrontLeftArea.OverlapPoint(pos) && !wallFrontLeftHammer.gameObject.activeSelf) 
+        {
+            wallFrontLeftHammer.gameObject.SetActive(true);
+            BoxTimer.Dur += 5;
+            BoxTimer.MaxDur = Mathf.Max(BoxTimer.MaxDur, BoxTimer.Dur);
+        }
+    }
+
+    private void UseWallBackLeftHammerIfPossible(Vector2 pos)
+    {
+        if (wallBackLeftArea.OverlapPoint(pos) && !wallBackLeftHammer.gameObject.activeSelf) 
+        {
+            wallBackLeftHammer.gameObject.SetActive(true);
+            BoxTimer.Dur += 5;
+            BoxTimer.MaxDur = Mathf.Max(BoxTimer.MaxDur, BoxTimer.Dur);
+        }
+    }
+
+    private void UseWallBackRightHammerIfPossible(Vector2 pos)
+    {
+        if (wallBackRightArea.OverlapPoint(pos) && !wallBackRightHammer.gameObject.activeSelf) 
+        {
+            wallBackRightHammer.gameObject.SetActive(true);
             BoxTimer.Dur += 5;
             BoxTimer.MaxDur = Mathf.Max(BoxTimer.MaxDur, BoxTimer.Dur);
         }
@@ -89,15 +153,18 @@ public class BoxItemController : MonoBehaviour
     private void AddBottomBox(Vector2 pos)
     {
         bottomBox.gameObject.SetActive(true);
+        selectors.ActiveItemContainer.FullDeselect();
+        selectors.ActiveItemContainer.MarkItemAsUnavailable("box-bottom", true);
     }
 
-    private void AddCardKeyBox(Vector2 pos) {AddCardBox(pos, "key")}
-    private void AddCardEnergyBox(Vector2 pos) {AddCardBox(pos, "energy")}
-    private void AddCardDarknessBox(Vector2 pos) {AddCardBox(pos, "darkness")}
-    private void AddCardOldmanBox(Vector2 pos) {AddCardBox(pos, "oldman")}
+    private void AddCardKeyBox(Vector2 pos) {AddCardBox(pos, "key");}
+    private void AddCardEnergyBox(Vector2 pos) {AddCardBox(pos, "energy");}
+    private void AddCardDarknessBox(Vector2 pos) {AddCardBox(pos, "darkness");}
+    private void AddCardOldmanBox(Vector2 pos) {AddCardBox(pos, "oldman");}
 
     private void AddCardBox(Vector2 pos, string cardType)
     {
+        if (!cardArea.OverlapPoint(pos)) return;
         // Нужно не только курсор очистить, но и удалить сам объект карты
         selectors.ActiveItemContainer.FullDeselect();
 
@@ -116,14 +183,15 @@ public class BoxItemController : MonoBehaviour
         }
     }
 
-    private void AddWallFrontBox(Vector2 pos) {AddWallBox(pos, "front")}
-    private void AddWallBackBox(Vector2 pos) {AddWallBox(pos, "back")}
-    private void AddWallLeftBox(Vector2 pos) {AddWallBox(pos, "left")}
-    private void AddWallRightBox(Vector2 pos) {AddWallBox(pos, "right")}
+    private void AddWallFrontBox(Vector2 pos) {AddWallBox(pos, "front");}
+    private void AddWallBackBox(Vector2 pos) {AddWallBox(pos, "back");}
+    private void AddWallLeftBox(Vector2 pos) {AddWallBox(pos, "left");}
+    private void AddWallRightBox(Vector2 pos) {AddWallBox(pos, "right");}
 
     private void AddWallBox(Vector2 pos, string wallType)
     {
-        // Нужно не только курсор очистить, но и удалить сам объект карты
+        if (!wallArea.OverlapPoint(pos)) return;
+
         selectors.ActiveItemContainer.FullDeselect();
 
         // Проверка на то, что дно поставили на сцену
@@ -155,7 +223,21 @@ public class BoxItemController : MonoBehaviour
 
     private void AddCoverBox(Vector2 pos)
     {
-        if (!wallArea.OverlapPoint(pos)) return;
+        if (!coverArea.OverlapPoint(pos)) return;
+
+        if (wallFrontBox.gameObject.activeSelf &&
+            wallBackBox.gameObject.activeSelf &&
+            wallLeftBox.gameObject.activeSelf &&
+            wallRightBox.gameObject.activeSelf) 
+        {
+            selectors.ActiveItemContainer.FullDeselect();
+            coverBox.gameObject.SetActive(true);
+        }
+    }
+
+    private void AddLockBox(Vector2 pos)
+    {
+        if (!coverArea.OverlapPoint(pos)) return;
 
         if (wallFrontBox.gameObject.activeSelf &&
             wallBackBox.gameObject.activeSelf &&
