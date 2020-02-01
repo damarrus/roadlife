@@ -26,4 +26,9 @@ public class MouseItemUI : MonoBehaviour
     {
         Progress.value = value;
     }
+
+    private void OnDisable()
+    {
+        transform.position = new Vector3(5000, 5000);
+    }
 }

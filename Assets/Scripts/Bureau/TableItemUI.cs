@@ -6,7 +6,7 @@ public class TableItemUI : MonoBehaviour
 {
     public event Action OnBreakEnd = delegate { };
     public Animator animator;
-    public bool IsBreaking;
+    [HideInInspector] public bool IsBreaking;
     public static string BREAK = "Break";
 
     public void Break()

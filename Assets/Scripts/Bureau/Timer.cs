@@ -8,9 +8,9 @@ public class Timer : MonoBehaviour
     public event Action OnEnd = delegate { };
 
     public float MaxDur;
-    public float Dur;
-    public bool IsEventSended;
-    public bool IsTimerActive;
+    [HideInInspector] public float Dur;
+    [HideInInspector] public bool IsEventSended;
+    [HideInInspector] public bool IsTimerActive;
 
     public void Update()
     {
