@@ -21,10 +21,9 @@ public class ControllerGrue : MonoBehaviour
         if (controllerSelectedItem.ActiveToolsContainer.LastSelectedItem != null)
         {
             var itemId = controllerSelectedItem.ActiveToolsContainer.GetKey(controllerSelectedItem.ActiveToolsContainer.LastSelectedItem);
-            if (!canDoNext)
-            {
                 if (itemId == "glue")
                 {
+                    
                     if (canMouseLeft == true)
                     {
                         if (Input.GetMouseButtonDown(0))
@@ -45,14 +44,16 @@ public class ControllerGrue : MonoBehaviour
                     }
                     if (slider.value == slider.maxValue)
                     {
-                        canDoNext = true;
-                        slider.gameObject.SetActive(false) ; 
+                        
+                        slider.gameObject.SetActive(false);
+                        controllerSelectedItem.ActiveToolsContainer.FullDeselect();
                         OnGlueUsed.Invoke(Input.mousePosition);
+                        slider.value = 0;
+                            
                     }
                     slider.value -= 0.09f;
-
                 }
-            }
+            
         }
     }
 }
