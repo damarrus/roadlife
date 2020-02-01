@@ -80,6 +80,8 @@
     <Compile Include="Assets\Scripts\ControllersMechanics\ControllerHammer.cs" />
     <Compile Include="Assets\Scripts\ControllersMechanics\ControllerLever.cs" />
     <Compile Include="Assets\Scripts\ControllersMechanics\ControllerShower.cs" />
+    <Compile Include="Assets\Scripts\ControllersMechanics\ControllerThread.cs" />
+    <Compile Include="Assets\Scripts\ControllersMechanics\ControllerWindows.cs" />
     <Compile Include="Assets\Scripts\EcsInitializer.cs" />
     <Compile Include="Assets\Scripts\GlueUIController.cs" />
     <Compile Include="Assets\Scripts\MadaoEcs\Components\EntityStubComponent.cs" />
