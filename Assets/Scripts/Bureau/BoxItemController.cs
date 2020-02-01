@@ -92,7 +92,7 @@ public class BoxItemController : MonoBehaviour
             UseWallFrontLeftHammerIfPossible(pos);
             UseWallBackLeftHammerIfPossible(pos);
             UseWallBackRightHammerIfPossible(pos);
-        }
+        };
         
         wallFrontBox.OnBreakEnd += () => wallFrontBox.gameObject.SetActive(false);
         wallBackBox.OnBreakEnd += () => wallBackBox.gameObject.SetActive(false);
