@@ -34,6 +34,7 @@ public class ItemUI : MonoBehaviour, ISelectableItem<ItemUI>
 
     internal void SetAvailable(bool isAvailable)
     {
-        UnavailableMask.SetActive(!isAvailable);
+        gameObject.SetActive(!isAvailable);
+        //UnavailableMask.SetActive(!isAvailable);
     }
 }

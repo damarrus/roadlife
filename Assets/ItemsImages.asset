@@ -23,6 +23,10 @@ MonoBehaviour:
   - Key: pendant-lock
     Value: {fileID: 21300000, guid: 7851aad105fe45b42984cf05d46dbfc3, type: 3}
   - Key: hammer
-    Value: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+    Value: {fileID: 21300000, guid: d12130f7c3ebd064088e85d8a33dda74, type: 3}
   - Key: glue
-    Value: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+    Value: {fileID: 21300000, guid: 45444521f11d3a14198161409c66e74e, type: 3}
+  - Key: cloth
+    Value: {fileID: 21300000, guid: 9eb67091ddf79ef48b8dd7c474c8bbac, type: 3}
+  - Key: wd40
+    Value: {fileID: 21300000, guid: 49687fa6a1783784589265208db92ba8, type: 3}

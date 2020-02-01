@@ -21,20 +21,12 @@ public class ControllerGrue : MonoBehaviour
         if (controllerSelectedItem.ActiveToolsContainer.LastSelectedItem != null)
         {
             var itemId = controllerSelectedItem.ActiveToolsContainer.GetKey(controllerSelectedItem.ActiveToolsContainer.LastSelectedItem);
-                if (itemId == "glue")
-                {
-                    
-                    if (canMouseLeft == true)
-                    {
-                        if (Input.GetMouseButtonDown(0))
-                        {
-                            slider.value += 1;
-                            canMouseLeft = false;
-                            canMouseRight = true;
-                        }
-                    }
-                    else if (canMouseRight == true)
+            if (itemId == "glue")
+            {
 
+                if (canMouseLeft == true)
+                {
+                    if (Input.GetMouseButtonDown(0))
                     {
                         slider.value += 2;
                         canMouseLeft = false;
@@ -45,14 +37,22 @@ public class ControllerGrue : MonoBehaviour
                 {
                     if (Input.GetMouseButtonDown(1))
                     {
-                        slider.gameObject.SetActive(false);
-                        controllerSelectedItem.ActiveToolsContainer.FullDeselect();
-                        OnGlueUsed.Invoke(Input.mousePosition);
-                        slider.value = 0;
-                            
+                        slider.value += 2f;
+                        canMouseRight = false;
+                        canMouseLeft = true;
                     }
-                    slider.value -= 0.09f;
                 }
+                if (slider.value == slider.maxValue)
+                {
+                    slider.gameObject.SetActive(false);
+                    controllerSelectedItem.ActiveToolsContainer.FullDeselect();
+                    OnGlueUsed.Invoke(Input.mousePosition);
+                    slider.value = 0;
+
+                }
+                slider.value -= 0.09f;
+            }
+
         }
     }
 }

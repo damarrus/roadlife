@@ -36,7 +36,7 @@ public class ItemContainer : AbstractSingleTargetSelector<string, ItemUI>
         if (isUnabailavle)
         {
             UnavailableItems.Add(key);
-            item.SetAvailable(!isUnabailavle);
+            item.SetAvailable(isUnabailavle);
         } else
         {
             UnavailableItems.Remove(key);
