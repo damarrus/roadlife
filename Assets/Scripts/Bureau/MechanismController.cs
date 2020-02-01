@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine.UI;
 
-public class PendantItemController : MonoBehaviour
+public class MechanismController : MonoBehaviour
 {
     public ControllerGrue glueController;
     public SelectorsController selectors;
