@@ -6,7 +6,7 @@ using System;
 
 public class ControllerGrue : MonoBehaviour
 {
-    private SelectorsController controllerSelectedItem;
+    private  SelectorsController controllerSelectedItem;
     public Slider slider;
     private bool canMouseRight, canDoNext;
     private bool canMouseLeft = true;
@@ -21,38 +21,38 @@ public class ControllerGrue : MonoBehaviour
         if (controllerSelectedItem.ActiveToolsContainer.LastSelectedItem != null)
         {
             var itemId = controllerSelectedItem.ActiveToolsContainer.GetKey(controllerSelectedItem.ActiveToolsContainer.LastSelectedItem);
-            if (itemId == "glue")
-            {
-
-                if (canMouseLeft == true)
+                if (itemId == "glue")
                 {
-                    if (Input.GetMouseButtonDown(0))
+                    
+                    if (canMouseLeft == true)
                     {
-                        slider.value += 2;
-                        canMouseLeft = false;
-                        canMouseRight = true;
+                        if (Input.GetMouseButtonDown(0))
+                        {
+                            slider.value += 2;
+                            canMouseLeft = false;
+                            canMouseRight = true;
+                        }
                     }
-                }
-                else if (canMouseRight == true)
-                {
-                    if (Input.GetMouseButtonDown(1))
+                    else if (canMouseRight == true)
                     {
-                        slider.value += 2f;
-                        canMouseRight = false;
-                        canMouseLeft = true;
+                        if (Input.GetMouseButtonDown(1))
+                        {
+                            slider.value += 2f;
+                            canMouseRight = false;
+                            canMouseLeft = true;
+                        }
                     }
+                    if (slider.value == slider.maxValue)
+                    {
+                        slider.gameObject.SetActive(false);
+                        controllerSelectedItem.ActiveToolsContainer.FullDeselect();
+                        OnGlueUsed.Invoke(Input.mousePosition);
+                        slider.value = 0;
+                            
+                    }
+                    slider.value -= 0.09f;
                 }
-                if (slider.value == slider.maxValue)
-                {
-                    slider.gameObject.SetActive(false);
-                    controllerSelectedItem.ActiveToolsContainer.FullDeselect();
-                    OnGlueUsed.Invoke(Input.mousePosition);
-                    slider.value = 0;
-
-                }
-                slider.value -= 0.09f;
-            }
-
+            
         }
     }
 }
