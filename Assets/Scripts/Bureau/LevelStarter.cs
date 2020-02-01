@@ -8,7 +8,10 @@ public class LevelStarter : MonoBehaviour
     public SelectorsController selectorsController;
     public GameObject firstLevelItems;
     public ItemContainer firstLevelSelectorItemSelector;
-    public ItemContainer firstLevelToolSelector;
+    public ItemContainer firstLevelToolSelector; 
+    public GameObject secondLevelItems;
+    public ItemContainer secondLevelSelectorItemSelector;
+    public ItemContainer secondLevelToolSelector;
 
     private void Start()
     {
@@ -21,4 +24,9 @@ public class LevelStarter : MonoBehaviour
         selectorsController.SetSelectors(firstLevelSelectorItemSelector, firstLevelToolSelector);
     }
 
+    public void StartSecondLevel()
+    {
+        secondLevelItems.SetActive(true);
+        selectorsController.SetSelectors(secondLevelSelectorItemSelector, secondLevelToolSelector);
+    }
 }
