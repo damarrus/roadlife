@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-public class ControllerShower : MonoBehaviour
+public class ControllerThread : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     public event Action<Quaternion> OnLeverUsed;
     private bool canMove;
@@ -29,26 +29,33 @@ public class ControllerShower : MonoBehaviour
             if (itemId == "shower")
             {
                 Debug.Log(slider.value);
-                    if (Input.mousePosition.y > temp)
-                    {
-                        slider.value += 0.65f;
-                    }
-                    else if (Input.mousePosition.y < temp)
-                    {
-                        slider.value += 0.65f;
-                    }
-             if(slider.value == slider.maxValue)
-             {
+                if (Input.mousePosition.y > temp)
+                {
+                    slider.value += 0.65f;
+                }
+                else if (Input.mousePosition.y < temp)
+                {
+                    slider.value += 0.65f;
+                }
+                if (slider.value == slider.maxValue)
+                {
                     slider.gameObject.SetActive(false);
                     controllerSelectedItem.ActiveToolsContainer.FullDeselect();
                     OnShowerUsed.Invoke(Input.mousePosition);
                     slider.value = 0;
-             }
+                }
                 temp = Input.mousePosition.y;
                 slider.value -= 0.5f;
 
             }
         }
     }
-
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        canMove = true;
+    }
+    public void OnPointerUp(PointerEventData eventData)
+    {
+        canMove = false;
+    }
 }

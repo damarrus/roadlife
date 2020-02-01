@@ -6,7 +6,7 @@ using System;
 
 public class ControllerGrue : MonoBehaviour
 {
-    private SelectorsController controllerSelectedItem;
+    private  SelectorsController controllerSelectedItem;
     public Slider slider;
     private bool canMouseRight, canDoNext;
     private bool canMouseLeft = true;
@@ -28,22 +28,21 @@ public class ControllerGrue : MonoBehaviour
                     {
                         if (Input.GetMouseButtonDown(0))
                         {
-                            slider.value += 1;
+                            slider.value += 2;
                             canMouseLeft = false;
                             canMouseRight = true;
                         }
                     }
                     else if (canMouseRight == true)
-
                     {
-                        slider.value += 2;
-                        canMouseLeft = false;
-                        canMouseRight = true;
+                        if (Input.GetMouseButtonDown(1))
+                        {
+                            slider.value += 2f;
+                            canMouseRight = false;
+                            canMouseLeft = true;
+                        }
                     }
-                }
-                else if (canMouseRight == true)
-                {
-                    if (Input.GetMouseButtonDown(1))
+                    if (slider.value == slider.maxValue)
                     {
                         slider.gameObject.SetActive(false);
                         controllerSelectedItem.ActiveToolsContainer.FullDeselect();
@@ -53,6 +52,7 @@ public class ControllerGrue : MonoBehaviour
                     }
                     slider.value -= 0.09f;
                 }
+            
         }
     }
 }
