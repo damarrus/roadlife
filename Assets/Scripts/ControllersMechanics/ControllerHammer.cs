@@ -8,7 +8,7 @@ public class ControllerHammer : MonoBehaviour
 
     private SelectorsController controllerSelectedItem;
     public Slider slider;
-    private bool canMouseRight, canDoNext;
+    private bool canMouseRight;
     private bool canMouseLeft = true;
     public event Action<Vector2> OnHammerUsed = delegate { };
 
