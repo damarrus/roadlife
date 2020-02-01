@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,7 +6,7 @@ using System;
 
 public class ControllerGrue : MonoBehaviour
 {
-    private  SelectorsController controllerSelectedItem;
+    private SelectorsController controllerSelectedItem;
     public Slider slider;
     private bool canMouseRight, canDoNext;
     private bool canMouseLeft = true;
@@ -34,15 +34,16 @@ public class ControllerGrue : MonoBehaviour
                         }
                     }
                     else if (canMouseRight == true)
+
                     {
-                        if (Input.GetMouseButtonDown(1))
-                        {
-                            slider.value += 1f;
-                            canMouseRight = false;
-                            canMouseLeft = true;
-                        }
+                        slider.value += 2;
+                        canMouseLeft = false;
+                        canMouseRight = true;
                     }
-                    if (slider.value == slider.maxValue)
+                }
+                else if (canMouseRight == true)
+                {
+                    if (Input.GetMouseButtonDown(1))
                     {
                         slider.gameObject.SetActive(false);
                         controllerSelectedItem.ActiveToolsContainer.FullDeselect();
@@ -52,7 +53,6 @@ public class ControllerGrue : MonoBehaviour
                     }
                     slider.value -= 0.09f;
                 }
-            
         }
     }
 }
