@@ -15,7 +15,7 @@ public class Timer : MonoBehaviour
     public void Update()
     {
         Dur -= Time.deltaTime;
-        if (!IsEventSended && Dur < 0)
+        if (!IsEventSended && IsTimerActive && Dur < 0)
         {
             OnEnd.Invoke();
             IsEventSended = true;
