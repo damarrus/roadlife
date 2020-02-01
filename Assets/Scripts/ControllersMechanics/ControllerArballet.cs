@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-public class ControllerShower : MonoBehaviour
+public class ControllerArballet : MonoBehaviour
 {
     public event Action<Quaternion> OnLeverUsed;
     private bool canMove;
@@ -28,21 +28,21 @@ public class ControllerShower : MonoBehaviour
             var itemId = controllerSelectedItem.ActiveToolsContainer.GetKey(controllerSelectedItem.ActiveToolsContainer.LastSelectedItem);
             if (itemId == "shower")
             {
-                    if (Input.mousePosition.y > temp)
-                    {
-                        slider.value += 0.65f;
-                    }
-                    else if (Input.mousePosition.y < temp)
-                    {
-                        slider.value += 0.65f;
-                    }
-             if(slider.value == slider.maxValue)
-             {
+                if (Input.mousePosition.x > temp)
+                {
+                    slider.value += 0.65f;
+                }
+                else if (Input.mousePosition.x < temp)
+                {
+                    slider.value += 0.65f;
+                }
+                if (slider.value == slider.maxValue)
+                {
                     slider.gameObject.SetActive(false);
                     controllerSelectedItem.ActiveToolsContainer.FullDeselect();
                     OnShowerUsed.Invoke(Input.mousePosition);
                     slider.value = 0;
-             }
+                }
                 slider.value -= 0.5f;
 
             }
