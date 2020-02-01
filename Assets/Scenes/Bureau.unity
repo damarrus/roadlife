@@ -659,6 +659,8 @@ GameObject:
   - component: {fileID: 505880938}
   - component: {fileID: 505880940}
   - component: {fileID: 505880941}
+  - component: {fileID: 505880942}
+  - component: {fileID: 505880943}
   m_Layer: 0
   m_Name: Controllers
   m_TagString: Untagged
@@ -707,6 +709,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ff9fd15717cfac459e022fa954bb584, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pendantItemController: {fileID: 0}
   selectorsController: {fileID: 505880938}
   firstLevelItems: {fileID: 1602564806}
   firstLevelSelectorItemSelector: {fileID: 1249224258}
@@ -721,6 +724,32 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3a3bbc1124815bd49b0a76429bcf442d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 697742129}
+--- !u!114 &505880942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 505880937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23a901dcb2aa8a4478b235ac551735dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 697742129}
+--- !u!114 &505880943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 505880937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc7f5ec5e7f54264ca20a4034b10fb22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 697742129}
