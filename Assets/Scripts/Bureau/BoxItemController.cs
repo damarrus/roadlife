@@ -6,36 +6,32 @@ using UnityEngine.UI;
 
 public class BoxItemController : MonoBehaviour
 {
-    public ControllerHammer hammerController;
+    // public ControllerHammer hammerController;
     public SelectorsController selectors;
     public TableItemUI bottomBox;
     public TableItemUI cardKeyBox;
     public TableItemUI cardEnergyBox;
-    public TableItemUI cardDarknessBox;
-    public TableItemUI cardOldmanBox;
     public TableItemUI wallFrontBox;
     public TableItemUI wallBackBox;
     public TableItemUI wallLeftBox;
     public TableItemUI wallRightBox;
     public TableItemUI coverBox;
-    public TableItemUI lockBox;
 
     public TableClicker tableClicker;
-    public ColliderThing wallFrontRightHammer;
-    public ColliderThing wallFrontLeftHammer;
-    public ColliderThing wallBackLeftHammer;
-    public ColliderThing wallBackRightHammer;
+    // public ColliderThing wallFrontRightHammer;
+    // public ColliderThing wallFrontLeftHammer;
+    // public ColliderThing wallBackLeftHammer;
+    // public ColliderThing wallBackRightHammer;
     public Slider timerSlider;
     
 
-    public BoxCollider2D wallFrontRightArea;
-    public BoxCollider2D wallFrontLeftArea;
-    public BoxCollider2D wallBackLeftArea;
-    public BoxCollider2D wallBackRightArea;
+    // public BoxCollider2D wallFrontRightArea;
+    // public BoxCollider2D wallFrontLeftArea;
+    // public BoxCollider2D wallBackLeftArea;
+    // public BoxCollider2D wallBackRightArea;
     public BoxCollider2D cardArea;
     public BoxCollider2D wallArea;
     public BoxCollider2D coverArea;
-    public BoxCollider2D lockArea;
 
     public Timer BoxTimer;
 
@@ -48,14 +44,11 @@ public class BoxItemController : MonoBehaviour
             { "box-bottom", AddBottomBox },
             { "box-card-key", AddCardKeyBox },
             { "box-card-energy", AddCardEnergyBox },
-            { "box-card-darkness", AddCardDarknessBox },
-            { "box-card-oldman", AddCardOldmanBox },
             { "box-wall-front", AddWallFrontBox },
             { "box-wall-back", AddWallBackBox },
             { "box-wall-left", AddWallLeftBox },
             { "box-wall-right", AddWallRightBox },
-            { "box-cover", AddCoverBox },
-            { "box-lock", AddLockBox }
+            { "box-cover", AddCoverBox }
             // { "box-key", AddKeyBox }
         };
 
@@ -67,39 +60,36 @@ public class BoxItemController : MonoBehaviour
             if (wallLeftBox.gameObject.activeSelf){wallLeftBox.Break();}
             if (wallRightBox.gameObject.activeSelf){wallRightBox.Break();}
             if (coverBox.gameObject.activeSelf){coverBox.Break();}
-            if (lockBox.gameObject.activeSelf){lockBox.Break();}
 
             wallFrontBox.Break();
             wallBackBox.Break();
             wallLeftBox.Break();
             wallRightBox.Break();
             coverBox.Break();
-            lockBox.Break();
 
-            wallFrontRightHammer.gameObject.SetActive(false);
-            wallFrontLeftHammer.gameObject.SetActive(false);
-            wallBackLeftHammer.gameObject.SetActive(false);
-            wallBackRightHammer.gameObject.SetActive(false);
+            // wallFrontRightHammer.gameObject.SetActive(false);
+            // wallFrontLeftHammer.gameObject.SetActive(false);
+            // wallBackLeftHammer.gameObject.SetActive(false);
+            // wallBackRightHammer.gameObject.SetActive(false);
 
             timerSlider.gameObject.SetActive(false);
         };
 
-        hammerController.OnHammerUsed += pos => {
+        // hammerController.OnHammerUsed += pos => {
             
-            // TODO проверка
+        //     // TODO проверка
 
-            UseWallFrontRightHammerIfPossible(pos);
-            UseWallFrontLeftHammerIfPossible(pos);
-            UseWallBackLeftHammerIfPossible(pos);
-            UseWallBackRightHammerIfPossible(pos);
-        };
+        //     UseWallFrontRightHammerIfPossible(pos);
+        //     UseWallFrontLeftHammerIfPossible(pos);
+        //     UseWallBackLeftHammerIfPossible(pos);
+        //     UseWallBackRightHammerIfPossible(pos);
+        // };
         
         wallFrontBox.OnBreakEnd += () => wallFrontBox.gameObject.SetActive(false);
         wallBackBox.OnBreakEnd += () => wallBackBox.gameObject.SetActive(false);
         wallLeftBox.OnBreakEnd += () => wallLeftBox.gameObject.SetActive(false);
         wallRightBox.OnBreakEnd += () => wallRightBox.gameObject.SetActive(false);
         coverBox.OnBreakEnd += () => coverBox.gameObject.SetActive(false);
-        lockBox.OnBreakEnd += () => lockBox.gameObject.SetActive(false);
     }
 
     private void Update()
@@ -110,48 +100,49 @@ public class BoxItemController : MonoBehaviour
         }
     }
 
-    private void UseWallFrontRightHammerIfPossible(Vector2 pos)
-    {
-        if (wallFrontRightArea.OverlapPoint(pos) && !wallFrontRightHammer.gameObject.activeSelf) 
-        {
-            wallFrontRightHammer.gameObject.SetActive(true);
-            BoxTimer.Dur += 5;
-            BoxTimer.MaxDur = Mathf.Max(BoxTimer.MaxDur, BoxTimer.Dur);
-        }
-    }
+    // private void UseWallFrontRightHammerIfPossible(Vector2 pos)
+    // {
+    //     if (wallFrontRightArea.OverlapPoint(pos) && !wallFrontRightHammer.gameObject.activeSelf) 
+    //     {
+    //         wallFrontRightHammer.gameObject.SetActive(true);
+    //         BoxTimer.Dur += 5;
+    //         BoxTimer.MaxDur = Mathf.Max(BoxTimer.MaxDur, BoxTimer.Dur);
+    //     }
+    // }
 
-    private void UseWallFrontLeftHammerIfPossible(Vector2 pos)
-    {
-        if (wallFrontLeftArea.OverlapPoint(pos) && !wallFrontLeftHammer.gameObject.activeSelf) 
-        {
-            wallFrontLeftHammer.gameObject.SetActive(true);
-            BoxTimer.Dur += 5;
-            BoxTimer.MaxDur = Mathf.Max(BoxTimer.MaxDur, BoxTimer.Dur);
-        }
-    }
+    // private void UseWallFrontLeftHammerIfPossible(Vector2 pos)
+    // {
+    //     if (wallFrontLeftArea.OverlapPoint(pos) && !wallFrontLeftHammer.gameObject.activeSelf) 
+    //     {
+    //         wallFrontLeftHammer.gameObject.SetActive(true);
+    //         BoxTimer.Dur += 5;
+    //         BoxTimer.MaxDur = Mathf.Max(BoxTimer.MaxDur, BoxTimer.Dur);
+    //     }
+    // }
 
-    private void UseWallBackLeftHammerIfPossible(Vector2 pos)
-    {
-        if (wallBackLeftArea.OverlapPoint(pos) && !wallBackLeftHammer.gameObject.activeSelf) 
-        {
-            wallBackLeftHammer.gameObject.SetActive(true);
-            BoxTimer.Dur += 5;
-            BoxTimer.MaxDur = Mathf.Max(BoxTimer.MaxDur, BoxTimer.Dur);
-        }
-    }
+    // private void UseWallBackLeftHammerIfPossible(Vector2 pos)
+    // {
+    //     if (wallBackLeftArea.OverlapPoint(pos) && !wallBackLeftHammer.gameObject.activeSelf) 
+    //     {
+    //         wallBackLeftHammer.gameObject.SetActive(true);
+    //         BoxTimer.Dur += 5;
+    //         BoxTimer.MaxDur = Mathf.Max(BoxTimer.MaxDur, BoxTimer.Dur);
+    //     }
+    // }
 
-    private void UseWallBackRightHammerIfPossible(Vector2 pos)
-    {
-        if (wallBackRightArea.OverlapPoint(pos) && !wallBackRightHammer.gameObject.activeSelf) 
-        {
-            wallBackRightHammer.gameObject.SetActive(true);
-            BoxTimer.Dur += 5;
-            BoxTimer.MaxDur = Mathf.Max(BoxTimer.MaxDur, BoxTimer.Dur);
-        }
-    }
+    // private void UseWallBackRightHammerIfPossible(Vector2 pos)
+    // {
+    //     if (wallBackRightArea.OverlapPoint(pos) && !wallBackRightHammer.gameObject.activeSelf) 
+    //     {
+    //         wallBackRightHammer.gameObject.SetActive(true);
+    //         BoxTimer.Dur += 5;
+    //         BoxTimer.MaxDur = Mathf.Max(BoxTimer.MaxDur, BoxTimer.Dur);
+    //     }
+    // }
 
     private void AddBottomBox(Vector2 pos)
     {
+        Debug.Log("Text: AddBottomBox");
         bottomBox.gameObject.SetActive(true);
         selectors.ActiveItemContainer.FullDeselect();
         selectors.ActiveItemContainer.MarkItemAsUnavailable("box-bottom", true);
@@ -159,8 +150,6 @@ public class BoxItemController : MonoBehaviour
 
     private void AddCardKeyBox(Vector2 pos) {AddCardBox(pos, "key");}
     private void AddCardEnergyBox(Vector2 pos) {AddCardBox(pos, "energy");}
-    private void AddCardDarknessBox(Vector2 pos) {AddCardBox(pos, "darkness");}
-    private void AddCardOldmanBox(Vector2 pos) {AddCardBox(pos, "oldman");}
 
     private void AddCardBox(Vector2 pos, string cardType)
     {
@@ -174,8 +163,6 @@ public class BoxItemController : MonoBehaviour
             if (cardType == "key") {
                 // Выдвигается дно с ключом, ключ летит в инвентарь, карта исчезает
             } else if (cardType == "energy") {
-                // Выдвигается дно с энергией, энергия летит в инвентарь, карта исчезает
-            } else if (cardType == "darkness") {
                 // Все части на поле убираются в инвентарь, карта исчезает
             } else {
                 // Ничего не происходит, карта исчезает
@@ -235,19 +222,19 @@ public class BoxItemController : MonoBehaviour
         }
     }
 
-    private void AddLockBox(Vector2 pos)
-    {
-        if (!coverArea.OverlapPoint(pos)) return;
+    // private void AddLockBox(Vector2 pos)
+    // {
+    //     if (!coverArea.OverlapPoint(pos)) return;
 
-        if (wallFrontBox.gameObject.activeSelf &&
-            wallBackBox.gameObject.activeSelf &&
-            wallLeftBox.gameObject.activeSelf &&
-            wallRightBox.gameObject.activeSelf) 
-        {
-            selectors.ActiveItemContainer.FullDeselect();
-            coverBox.gameObject.SetActive(true);
-        }
-    }
+    //     if (wallFrontBox.gameObject.activeSelf &&
+    //         wallBackBox.gameObject.activeSelf &&
+    //         wallLeftBox.gameObject.activeSelf &&
+    //         wallRightBox.gameObject.activeSelf) 
+    //     {
+    //         selectors.ActiveItemContainer.FullDeselect();
+    //         coverBox.gameObject.SetActive(true);
+    //     }
+    // }
 
     // private void AddGemPendant(Vector2 pos)
     // {

@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class ControllerWindows : MonoBehaviour
 {
     public GameObject WindowCharacter;
+    public GameObject WindowToBeContinued;
     public GameObject buttonGoAhead, buttonContinue;
     public AudioSource firstCharacter;
     public AudioSource mainAudio;
@@ -37,6 +38,12 @@ public class ControllerWindows : MonoBehaviour
     public void BeginRepairItem()
     {       
         WindowCharacter.SetActive(false);
+    }
+
+    public void ToBeContinued()
+    {       
+        WindowCharacter.SetActive(false);
+        WindowToBeContinued.SetActive(true);
     }
 
 

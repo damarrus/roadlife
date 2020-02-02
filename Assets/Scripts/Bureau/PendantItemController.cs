@@ -73,7 +73,7 @@ public class PendantItemController : MonoBehaviour
             && !rightPendant.IsBreaking)
         {
             gemGlue.gameObject.SetActive(true);
-            LeftAndRightPartsTimer.Dur += 5;
+            LeftAndRightPartsTimer.Dur += 3;
             LeftAndRightPartsTimer.MaxDur = Mathf.Max(LeftAndRightPartsTimer.MaxDur, LeftAndRightPartsTimer.Dur);
         }
     }
