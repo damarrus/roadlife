@@ -11,6 +11,8 @@ public class ControllerGrue : MonoBehaviour
     private bool canMouseRight, canDoNext;
     private bool canMouseLeft = true;
     public event Action<Vector2> OnGlueUsed = delegate { };
+   
+    public AudioSource audioGlue;
 
     public void Start()
     {
@@ -46,6 +48,7 @@ public class ControllerGrue : MonoBehaviour
                     {
                         slider.gameObject.SetActive(false);
                         controllerSelectedItem.ActiveToolsContainer.FullDeselect();
+                        audioGlue.Play();
                         OnGlueUsed.Invoke(Input.mousePosition);
                         slider.value = 0;
                             

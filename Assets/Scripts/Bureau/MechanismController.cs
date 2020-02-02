@@ -106,7 +106,7 @@ public class MechanismController : MonoBehaviour
     {
         timerSlider.gameObject.SetActive(false);
         LeftAndRightPartsTimer.IsTimerActive = false;
-        windowsController.BeginCharacter(0);
+        windowsController.BeginCharacter();
     }
 
     private bool IsItemCompleted()

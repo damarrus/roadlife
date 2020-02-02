@@ -8,10 +8,19 @@ public class StartGame : MonoBehaviour
     public void BeginGame()
     {
         button.GetComponent<AudioSource>().Play();
-        InvokeRepeating("LoadScene", 1, 0);
+        Invoke("LoadScene", 0.5f);
     }
     private void LoadScene()
     {
         Application.LoadLevel("Bureau");
+    }
+    public void ExitGame()
+    {
+        button.GetComponent<AudioSource>().Play();
+        Invoke("Exit", 1);
+    }
+    private void Exit()
+    {
+        Application.Quit();
     }
 }

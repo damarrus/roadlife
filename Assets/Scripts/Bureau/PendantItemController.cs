@@ -83,6 +83,7 @@ public class PendantItemController : MonoBehaviour
         if (leftPendant.gameObject.activeSelf && lockArea.OverlapPoint(pos))
         {
             pendantLock.gameObject.SetActive(true);
+            GetComponent<AudioSource>().Play();
             selectors.ActiveItemContainer.FullDeselect();
             selectors.ActiveItemContainer.MarkItemAsUnavailable("pendant-lock", true);
             if (IsItemCompleted())
@@ -118,6 +119,8 @@ public class PendantItemController : MonoBehaviour
         if (!gemArea.OverlapPoint(pos)) return;
 
         pendantGem.gameObject.SetActive(true);
+        GetComponent<AudioSource>().Play();
+        GetComponent<AudioSource>().Play();
         selectors.ActiveItemContainer.FullDeselect();
         selectors.ActiveItemContainer.MarkItemAsUnavailable("pendant-gem", true);
         if (!gemGlue.gameObject.activeSelf || rightPendant.IsBreaking)
@@ -136,6 +139,7 @@ public class PendantItemController : MonoBehaviour
     private void AddRightPendant(Vector2 pos)
     {
         rightPendant.gameObject.SetActive(true);
+        GetComponent<AudioSource>().Play();
         selectors.ActiveItemContainer.FullDeselect();
         selectors.ActiveItemContainer.MarkItemAsUnavailable("pendant-right", true);
         if (leftPendant.gameObject.activeSelf)
@@ -148,6 +152,7 @@ public class PendantItemController : MonoBehaviour
     private void AddLeftPendant(Vector2 pos)
     {
         leftPendant.gameObject.SetActive(true);
+        GetComponent<AudioSource>().Play();
         selectors.ActiveItemContainer.FullDeselect();
         selectors.ActiveItemContainer.MarkItemAsUnavailable("pendant-left", true);
         if (rightPendant.gameObject.activeSelf)
